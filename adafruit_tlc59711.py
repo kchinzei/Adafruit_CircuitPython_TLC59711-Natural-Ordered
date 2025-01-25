@@ -457,10 +457,7 @@ class TLC59711:
             value=WRITE_COMMAND,
         )
 
-<<<<<<< HEAD
     def _init_lookuptable(self) -> None:
-=======
-    def _init_lookuptable(self):
         self._buffer_index_lookuptable = []
         for channel_index in range(self.channel_count):
             buffer_index = (_CHIP_BUFFER_BYTE_COUNT // _BUFFER_BYTES_PER_COLOR) * (
@@ -470,9 +467,8 @@ class TLC59711:
             buffer_index += _CHIP_BUFFER_HEADER_BYTE_COUNT
             self._buffer_index_lookuptable.append(buffer_index)
 
-    def _init_lookuptable_natural_order(self):
+    def _init_lookuptable_natural_order(self) -> None:
         self._buffer_index_lookuptable = []
->>>>>>> 657d239 (Add natural_order() / Move README.rst mods at top.)
         for channel_index in range(self.channel_count):
             # Modified for the natural order of channel_index
             buffer_index = (_CHIP_BUFFER_BYTE_COUNT // _BUFFER_BYTES_PER_COLOR) * (
